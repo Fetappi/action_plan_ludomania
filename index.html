@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>План действий: защита семьи и имущества при лудомании</title>
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #475569;
+            --primary: #1d4ed8;
+            --primary-hover: #1e40af;
+            --danger-bg: #fef2f2;
+            --danger-border: #ef4444;
+            --danger-text: #991b1b;
+            --warning-bg: #fffbeb;
+            --warning-border: #f59e0b;
+            --warning-text: #92400e;
+            --success-bg: #f0fdf4;
+            --success-border: #22c55e;
+            --success-text: #166534;
+            --border-color: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.65;
+            padding: 20px 15px 50px;
+        }
+
+        .container {
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: #ffffff;
+            padding: 32px 28px;
+            border-radius: 16px;
+            margin-bottom: 24px;
+            box-shadow: 0 10px 25px rgba(15, 23, 42, 0.12);
+        }
+
+        header .badge {
+            display: inline-block;
+            background: #ef4444;
+            color: #fff;
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            padding: 4px 10px;
+            border-radius: 6px;
+            margin-bottom: 12px;
+        }
+
+        header h1 {
+            font-size: 1.75rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+        }
+
+        header p {
+            color: #cbd5e1;
+            font-size: 1rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 14px;
+            padding: 26px 28px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+        }
+
+        h2 {
+            font-size: 1.35rem;
+            margin-bottom: 16px;
+            color: #0f172a;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            font-size: 1.12rem;
+            margin: 18px 0 10px;
+            color: #0f172a;
+        }
+
+        p {
+            margin-bottom: 14px;
+        }
+
+        ul, ol {
+            margin: 10px 0 16px 22px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            font-weight: 600;
+            transition: color 0.15s ease;
+        }
+
+        a:hover {
+            color: var(--primary-hover);
+        }
+
+        h2 a, h3 a {
+            color: var(--primary);
+        }
+
+        .alert {
+            padding: 16px 20px;
+            border-radius: 10px;
+            margin: 16px 0;
+            border-left: 5px solid;
+        }
+
+        .alert-danger {
+            background-color: var(--danger-bg);
+            border-left-color: var(--danger-border);
+            color: var(--danger-text);
+        }
+
+        .alert-warning {
+            background-color: var(--warning-bg);
+            border-left-color: var(--warning-border);
+            color: var(--warning-text);
+        }
+
+        .alert-success {
+            background-color: var(--success-bg);
+            border-left-color: var(--success-border);
+            color: var(--success-text);
+        }
+
+        .step-box {
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 18px;
+            background: #fcfdff;
+        }
+
+        .step-number {
+            display: inline-block;
+            background: var(--primary);
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 0.85rem;
+            padding: 3px 10px;
+            border-radius: 20px;
+            margin-bottom: 8px;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px;
+            border-radius: 8px;
+            background: #f8fafc;
+            margin-bottom: 10px;
+            border: 1px solid var(--border-color);
+        }
+
+        .checklist-item input[type="checkbox"] {
+            margin-top: 5px;
+            width: 18px;
+            height: 18px;
+            accent-color: var(--primary);
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+            margin-top: 14px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.94rem;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 12px 14px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: #f1f5f9;
+            font-weight: 700;
+            color: #1e293b;
+        }
+
+        tr:hover td {
+            background-color: #f8fafc;
+        }
+
+        footer {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 24px 20px;
+            }
+            header h1 {
+                font-size: 1.4rem;
+            }
+            .card {
+                padding: 20px 18px;
+            }
+            h2 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="badge">Памятка для семьи</div>
+        <h1>Что делать при лудомании родственника: защита 1/3 квартиры и блокировка долгов</h1>
+        <p>Юридический разбор ситуации и пошаговый план действий для защиты жилья и бюджета семьи (г. Чебоксары)</p>
+    </header>
+
+    <div class="card">
+        <h2>Диагностика ситуации: что означает агрессия и отказ показать «Госуслуги»</h2>
+        <div class="alert alert-danger">
+            <strong>Ключевой вывод:</strong> Агрессия в ответ на просьбу показать «Госуслуги» и постоянное вранье означают, что человек прямо сейчас находится в <strong>активной фазе игры</strong> и почти наверняка уже набрал новых долгов.
+        </div>
+        <p>Когда игроман действительно прекратил делать ставки, он сам открывает приложения, показывает выписки и отчитывается перед близкими, чтобы вернуть доверие. Когда он защищается криком, обвинениями и отказывается зайти в личный кабинет — он прячет масштаб катастрофы.</p>
+    </div>
+
+    <div class="card">
+        <h2>1. Почему «положить в психушку» не выйдет, но есть законный рабочий инструмент</h2>
+
+        <h3><a href="https://www.consultant.ru/document/cons_doc_LAW_4205/" target="_blank" rel="noopener">Принудительная госпитализация (ст. 29 Закона РФ «О психиатрической помощи»)</a></h3>
+        <p>По российскому законодательству принудительно положить взрослого человека в психиатрический стационар из-за игровой зависимости, вранья и бытовой словесной агрессии <strong>нельзя</strong>. Без его письменного согласия бригада госпитализирует человека только в трех случаях: острый психоз (бред, галлюцинации), прямая попытка суицида или непосредственная физическая угроза жизни окружающих.</p>
+        <p>Частные «закрытые рехабы», которые обещают увезти и удерживать человека без его согласия, балансируют на грани ст. 127 УК РФ (незаконное лишение свободы), а после выхода оттуда обозленный игроман обычно срывается в первые же сутки.</p>
+
+        <h3><a href="https://www.consultant.ru/document/cons_doc_LAW_5142/" target="_blank" rel="noopener">Ограничение дееспособности судом из-за азартных игр (п. 1 ст. 30 ГК РФ)</a></h3>
+        <div class="alert alert-success">
+            <strong>Рабочий законный механизм:</strong> Закон прямо предусматривает ограничение дееспособности людей, которые <em>«вследствие пристрастия к азартным играм ставят свою семью в тяжелое материальное положение»</em>.
+        </div>
+        <p>Если сын проживает совместно с отцом (ведет общий быт, копит долги по ЖХК или вынуждает семью тратить средства на его содержание) и своими ставками наносит удар по бюджету семьи, отец имеет право подать заявление в районный суд (<a href="https://bsr.sudrf.ru/" target="_blank" rel="noopener">ГАС «Правосудие»</a>). Суд назначает отцу статус <strong>попечителя</strong>, после чего игроман по закону:</p>
+        <ul>
+            <li><strong>Не может</strong> самостоятельно брать кредиты, микрозаймы и заключать договоры займа (любая такая сделка без письменного согласия отца ничтожна);</li>
+            <li><strong>Не может</strong> продать, подарить, обменять или заложить свою 1/3 долю в квартире без подписи попечителя;</li>
+            <li>Самостоятельно может совершать только мелкие бытовые покупки, а его зарплату и иные доходы с согласия суда вправе получать и распределять отец-попечитель.</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>2. Что реально угрожает 1/3 доли в трехкомнатной квартире</h2>
+
+        <h3><a href="https://www.consultant.ru/document/cons_doc_LAW_39570/" target="_blank" rel="noopener">Защита единственного жилья от МФО и приставов (ст. 446 ГПК РФ)</a></h3>
+        <p>Если эта 1/3 доля в трехкомнатной квартире — его <strong>единственное жилье</strong> в собственности, то на нее распространяется <strong>исполнительский иммунитет</strong>. За обычные необеспеченные потребительские кредиты и микрозаймы ни судебные приставы (<a href="https://fssp.gov.ru/iss/ip" target="_blank" rel="noopener">ФССП России</a>), ни коллекторы не имеют права забрать эту долю, выставить ее на торги или кого-то туда вселить.</p>
+        <p>Максимум, что сделают приставы — наложат <strong>запрет на регистрационные действия</strong> (он не сможет сам продать или подарить долю, пока не закроет исполнительное производство) и арестуют его банковские счета.</p>
+        <p><em>Важное исключение:</em> если у него в собственности есть еще хотя бы малая доля в другом жилье (например, в доме в деревне или другой квартире), то 1/3 в трешке перестает считаться единственным жильем — и тогда приставы действительно могут обратить на нее взыскание.</p>
+
+        <div class="alert alert-warning">
+            <h3><a href="https://www.consultant.ru/document/cons_doc_LAW_19671/" target="_blank" rel="noopener">Главная опасность: добровольный залог доли (ФЗ «Об ипотеке (залоге недвижимости)»)</a></h3>
+            <p style="margin-bottom:0;">Когда легальные банки и МФО перестают давать деньги из-за испорченной кредитной истории, лудоманы идут к частным кредиторам или «черным брокерам» и берут займы <strong>под залог своей доли недвижимости</strong> (либо подписывают договор купли-продажи с обещанием «обратного выкупа»). Как только он сам ставит подпись под договором залога, <strong>иммунитет единственного жилья перестает действовать</strong> — залоговую долю забирают через суд совершенно законно.</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>3. Пошаговый план действий прямо сейчас (можно отмечать выполненное)</h2>
+
+        <div class="step-box">
+            <span class="step-number">Шаг 1</span>
+            <h3>Полный отказ от погашения его долгов (работа с отцом)</h3>
+            <p>То, что родственники дважды гасили его микрозаймы — это классическая ловушка созависимости. Для психики лудомана оплаченный родными долг означает одно: <em>«последствий нет, меня всегда вытащат, можно ставить дальше»</em>.</p>
+            <div class="checklist-item">
+                <input type="checkbox" id="c1">
+                <label for="c1">Договориться с дядей: больше <strong>ни одного рубля</strong> не переводится в МФО и банкам за сына. Пусть капают проценты, портятся рейтинги и приходят приставы — чем быстрее его кредитный рейтинг пробьет дно, тем быстрее ему перестанут одобрять новые займы.</label>
+            </div>
+        </div>
+
+        <div class="step-box">
+            <span class="step-number">Шаг 2</span>
+            <h3><a href="https://notariat.ru/" target="_blank" rel="noopener">Вывод 1/3 квартиры из-под удара через договор дарения отцу (Федеральная нотариальная палата)</a></h3>
+            <p>Пока судебные приставы не успели наложить запрет на регистрационные действия, отец должен поставить жесткий ультиматум: любые разговоры о поддержке возможны только после того, как сын перепишет свою 1/3 долю на отца по <strong>договору дарения</strong>.</p>
+            <div class="checklist-item">
+                <input type="checkbox" id="c2">
+                <label for="c2">Оформить дарение 1/3 доли от сына к отцу у любого нотариуса г. Чебоксары (между близкими родственниками — сыном и отцом — налог НДФЛ 13% <strong>не взимается</strong> согласно п. 18.1 ст. 217 НК РФ). Это на 100% защитит квартиру от залога ростовщикам.</label>
+            </div>
+        </div>
+
+        <div class="step-box">
+            <span class="step-number">Шаг 3</span>
+            <h3>Личный контроль «Госуслуг» и установка 4 защитных блокировок</h3>
+            <p>Просить у игромана «прислать справки» бесполезно — они за 5 минут подделывают цифры в PDF-редакторе или в коде страницы браузера. Дядя должен сесть рядом с сыном, лично зайти в его аккаунт на Госуслугах (либо сходить с ним за руку в <a href="https://mfc21.cap.ru/" target="_blank" rel="noopener">МФЦ в Чебоксарах</a>) и выполнить 4 действия:</p>
+
+            <div class="checklist-item">
+                <input type="checkbox" id="c3">
+                <label for="c3">
+                    <a href="https://www.gosuslugi.ru/644881/1/form" target="_blank" rel="noopener">1. Включить полный самозапрет на кредиты и микрозаймы на Госуслугах</a><br>
+                    Устанавливается полный запрет на все потребительские кредиты и займы в банках и МФО (онлайн и очно). Если любая МФО выдаст заем при действующем самозапрете, по закону она теряет право требовать возврата долга.
+                </label>
+            </div>
+
+            <div class="checklist-item">
+                <input type="checkbox" id="c4">
+                <label for="c4">
+                    <a href="https://www.gosuslugi.ru/" target="_blank" rel="noopener">2. Подать заявление на самозапрет на участие в азартных играх (575-ФЗ / ЕРАИ)</a><br>
+                    Через Госуслуги подается заявление о включении в перечень физических лиц, отказавшихся от участия в азартных играх (<a href="https://erai.ru/" target="_blank" rel="noopener">Единый регулятор азартных игр — ЕРАИ</a>). Срок запрета — минимум 12 месяцев, отозвать его досрочно невозможно. Все легальные букмекеры и ЦУПИС обязаны заблокировать прием ставок.
+                </label>
+            </div>
+
+            <div class="checklist-item">
+                <input type="checkbox" id="c5">
+                <label for="c5">
+                    <a href="https://www.gosuslugi.ru/600359/1/form" target="_blank" rel="noopener">3. Установить запрет на сделки с недвижимостью без личного участия (Росреестр)</a><br>
+                    Защищает 1/3 долю от удаленного оформления залога или продажи по электронной подписи (УКЭП) без личного визита в Росреестр/МФЦ.
+                </label>
+            </div>
+
+            <div class="checklist-item">
+                <input type="checkbox" id="c6">
+                <label for="c6">
+                    <a href="https://www.gosuslugi.ru/600312/1/form" target="_blank" rel="noopener">4. Выгрузить реальные отчеты из Бюро кредитных историй (ЦККИ и БКИ)</a><br>
+                    Прямо при отце запросить на Госуслугах список БКИ, а затем зайти через кнопку «Войти через Госуслуги» на сайты трех главных бюро и скачать бесплатные PDF-отчеты (2 раза в год бесплатно):<br>
+                    • <a href="https://person.nbki.ru/" target="_blank" rel="noopener">Национальное бюро кредитных историй (НБКИ)</a><br>
+                    • <a href="https://credistory.ru/" target="_blank" rel="noopener">Объединенное Кредитное Бюро (ОКБ / Кредистория)</a><br>
+                    • <a href="https://online.scoring.ru/" target="_blank" rel="noopener">Скоринг Бюро</a>
+                </label>
+            </div>
+        </div>
+
+        <div class="step-box">
+            <span class="step-number">Шаг 4</span>
+            <h3>«Финансовый карантин» среди всех родственников и знакомых</h3>
+            <p>В острой фазе игроманы обзванивают всю телефонную книгу с легендами про «срочное лечение», «поломку машины», «задержку зарплаты» или «угрозы жизни».</p>
+            <div class="checklist-item">
+                <input type="checkbox" id="c7">
+                <label for="c7">Предупредить всех родственников и друзей семьи: <strong>не давать ему в долг ни под каким предлогом</strong>. Сразу озвучить правило: любой, кто одолжит ему деньги в обход семьи, делает это на свой страх и риск — родственники эти долги возвращать не будут.</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>4. Сводная таблица всех полезных ссылок и сервисов</h2>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Задача / Документ</th>
+                        <th>Прямая ссылка на сервис или закон</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Самозапрет на кредиты и МФО</td>
+                        <td><a href="https://www.gosuslugi.ru/644881/1/form" target="_blank" rel="noopener">gosuslugi.ru/644881/1/form</a></td>
+                    </tr>
+                    <tr>
+                        <td>Запрет сделок с жильем без личного участия</td>
+                        <td><a href="https://www.gosuslugi.ru/600359/1/form" target="_blank" rel="noopener">gosuslugi.ru/600359/1/form</a></td>
+                    </tr>
+                    <tr>
+                        <td>Самозапрет на ставки (ЕРАИ / Госуслуги)</td>
+                        <td><a href="https://erai.ru/" target="_blank" rel="noopener">erai.ru</a> / <a href="https://www.gosuslugi.ru/" target="_blank" rel="noopener">gosuslugi.ru</a></td>
+                    </tr>
+                    <tr>
+                        <td>Узнать свои БКИ через Госуслуги</td>
+                        <td><a href="https://www.gosuslugi.ru/600312/1/form" target="_blank" rel="noopener">gosuslugi.ru/600312/1/form</a></td>
+                    </tr>
+                    <tr>
+                        <td>Проверка кредитной истории — НБКИ</td>
+                        <td><a href="https://person.nbki.ru/" target="_blank" rel="noopener">person.nbki.ru</a></td>
+                    </tr>
+                    <tr>
+                        <td>Проверка кредитной истории — ОКБ (Кредистория)</td>
+                        <td><a href="https://credistory.ru/" target="_blank" rel="noopener">credistory.ru</a></td>
+                    </tr>
+                    <tr>
+                        <td>Проверка кредитной истории — Скоринг Бюро</td>
+                        <td><a href="https://online.scoring.ru/" target="_blank" rel="noopener">online.scoring.ru</a></td>
+                    </tr>
+                    <tr>
+                        <td>Проверка долгов у судебных приставов (ФССП)</td>
+                        <td><a href="https://fssp.gov.ru/iss/ip" target="_blank" rel="noopener">fssp.gov.ru/iss/ip</a></td>
+                    </tr>
+                    <tr>
+                        <td>МФЦ Чувашской Республики (г. Чебоксары)</td>
+                        <td><a href="https://mfc21.cap.ru/" target="_blank" rel="noopener">mfc21.cap.ru</a></td>
+                    </tr>
+                    <tr>
+                        <td>Статья 30 ГК РФ (Ограничение дееспособности)</td>
+                        <td><a href="https://www.consultant.ru/document/cons_doc_LAW_5142/" target="_blank" rel="noopener">consultant.ru (ст. 30 ГК РФ)</a></td>
+                    </tr>
+                    <tr>
+                        <td>Статья 446 ГПК РФ (Иммунитет единственного жилья)</td>
+                        <td><a href="https://www.consultant.ru/document/cons_doc_LAW_39570/" target="_blank" rel="noopener">consultant.ru (ст. 446 ГПК РФ)</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <footer>
+        Памятка составлена для защиты имущественных интересов семьи • Все ссылки открываются в новой вкладке
+    </footer>
+</div>
+
+</body>
+</html>
